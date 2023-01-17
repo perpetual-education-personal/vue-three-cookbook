@@ -4,6 +4,10 @@
 	font-family: sans-serif;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 * > svg {
 	display: block;
 	width: 100%;
@@ -16,4 +20,26 @@
 
 .router-link-active * {
 	fill: var(--color);
+}
+
+.site-menu ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	list-style: none; /* $todo */
+	margin: 0;
+	padding: 0;
+}
+
+.site-menu a:not(.home-link) {
+	padding: 20px;
+}
+
+.site-menu .home-link {
+	display: block;
+	padding: 10px;
+}
+
+.site-menu .home-link svg {
+	max-width: 20px;
 }

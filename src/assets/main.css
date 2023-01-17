@@ -1,0 +1,17 @@
+#app {
+	--color: red;
+}
+
+* > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.router-link-active {
+	color: var(--color);
+}
+
+.router-link-active * {
+	fill: var(--color);
+}

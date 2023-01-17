@@ -7,10 +7,12 @@
 <template>
    <header>
       <div class="wrapper">
-         <HelloWorld helloMessage="Vue three cookbook" />
-
          <nav class="site-menu">
             <ul>
+               <li>
+                  <HelloWorld helloMessage="V3C" />
+               </li>
+
                <li>
                   <RouterLink class="home-link" to="/">
                      <ProjectLogo />
@@ -44,6 +46,7 @@
    }
    .home-link {
       display: block;
-      max-width: 40px;
+      max-width: 30px;
+      padding: 10px;
    }
 </style>

@@ -17,3 +17,9 @@
 .router-link-active * {
 	fill: var(--color);
 }
+
+#app,
+div.outlet {
+	border: 3px dashed red;
+	padding: 10px;
+}

@@ -5,7 +5,8 @@
 </script>
 
 <template>
-	<h1>List</h1>
+	<p>ProductListView</p>
+	<h1>Products</h1>
 
 	<ul>
 		<li v-for="product in products.list">

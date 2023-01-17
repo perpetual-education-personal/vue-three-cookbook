@@ -9,5 +9,6 @@
 </script>
 
 <template>
-	<h1>Detail {{ product.name }}</h1>
+	<p>ProductDetailView</p>
+	<h1 class="loud-voice">{{ product.name }}</h1>
 </template>

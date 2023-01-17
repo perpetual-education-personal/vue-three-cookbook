@@ -6,9 +6,7 @@
 </script>
 
 <template>
-	<h1 class="loud-voice">Products</h1>
-
-	<section>
+	<div class="outlet">
 		<RouterView :products="products" />
-	</section>
+	</div>
 </template>

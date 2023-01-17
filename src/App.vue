@@ -31,7 +31,9 @@
       </div>
    </header>
 
-   <RouterView />
+   <div class="outlet">
+      <RouterView />
+   </div>
 </template>
 
 <style>

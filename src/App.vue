@@ -5,48 +5,75 @@
 </script>
 
 <template>
-   <header>
-      <div class="wrapper">
-         <nav class="site-menu">
-            <ul>
-               <li>
-                  <HelloWorld helloMessage="V3C" />
-               </li>
+   <vue-app>
+      <header>
+         <inner-column>
+            <nav class="site-menu">
+               <ul>
+                  <li>
+                     <HelloWorld helloMessage="V3C" />
+                  </li>
 
-               <li>
-                  <RouterLink class="home-link" to="/">
-                     <ProjectLogo />
-                  </RouterLink>
-               </li>
+                  <li>
+                     <RouterLink class="home-link" to="/">
+                        <ProjectLogo />
+                     </RouterLink>
+                  </li>
 
-               <li>
-                  <RouterLink to="/">Home</RouterLink>
-               </li>
+                  <li>
+                     <RouterLink to="/">Home</RouterLink>
+                  </li>
 
-               <li>
-                  <RouterLink to="/about">About</RouterLink>
-               </li>
-            </ul>
-         </nav>
-      </div>
-   </header>
+                  <li>
+                     <RouterLink to="/about">About</RouterLink>
+                  </li>
+               </ul>
+            </nav>
+         </inner-column>
+      </header>
 
-   <RouterView />
+      <main>
+         <inner-column>
+            <route-outlet>
+               <RouterView />
+            </route-outlet>
+         </inner-column>
+      </main>
+
+      <footer>
+         <inner-column> footer </inner-column>
+      </footer>
+   </vue-app>
 </template>
 
 <style>
-   .site-menu ul {
+   body,
+   #app {
+      display: contents;
+   }
+
+   vue-app {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      list-style: none; /* $todo */
+      flex-direction: column;
+      min-height: 100vh;
    }
-   .site-menu a:not(.home-link) {
-      padding: 20px;
+
+   main {
+      flex-grow: 1;
    }
-   .home-link {
+
+   inner-column {
       display: block;
-      max-width: 30px;
+      max-width: 1000px;
+      margin-right: auto;
+      margin-left: auto;
+      border: 1px solid blue;
+      padding: 10px;
+   }
+
+   route-outlet {
+      display: block;
+      border: 2px dashed gray;
       padding: 10px;
    }
 </style>

@@ -26,7 +26,12 @@
 		<li>
 			These are all just great. However, what about ditching the body and #app layers and creating a stand-in root
 			element like this? →
-			[-html-structure-experiments](https://github.com/perpetual-education/vue-three-cookbook/tree/html-structure-experiments)
+			<a
+				href="https://github.com/perpetual-education/vue-three-cookbook/tree/html-structure-experiments"
+				target="hse"
+			>
+				-html-structure-experiments
+			</a>
 		</li>
 	</ol>
 </template>

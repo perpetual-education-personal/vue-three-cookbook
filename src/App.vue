@@ -54,7 +54,9 @@
       <div class="inner-column">
          <h2>mainMenuOpen: {{ mainMenuOpen }}</h2>
 
-         <nav class="site-menu">
+         <nav class="site-menu" :class="{ 'yay-me': mainMenuOpen }">
+            <!-- note prettier is stripping the 'yay' quotes 
+               but not when has a dash 'yay-me' (needed for non camelCase classes) -->
             <ul>
                <li>
                   <HelloWorld helloMessage="V3C" />
@@ -83,6 +85,8 @@
    </header>
 
    <RouterView />
+
+   <button @click="toggleMainMenu()">Toggle Body Class</button>
 </template>
 
 <style>

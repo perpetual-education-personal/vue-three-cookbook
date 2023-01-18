@@ -15,6 +15,8 @@
    <vue-app :class="{ 'menu-open': mainMenuOpen }">
       <header>
          <inner-column>
+            <button @click="toggleMenu()">toggle menu</button>
+
             <nav class="site-menu">
                <ul>
                   <li>
@@ -38,8 +40,6 @@
 
                <button @click="toggleMenu()">toggle menu</button>
             </nav>
-
-            <button @click="toggleMenu()">toggle menu</button>
          </inner-column>
       </header>
 
@@ -52,68 +52,88 @@
       </main>
 
       <footer>
-         <inner-column> footer </inner-column>
+         <inner-column>
+            <h2>footer</h2>
+
+            <button @click="toggleMenu()">toggle menu</button>
+         </inner-column>
       </footer>
    </vue-app>
 </template>
 
-<style>
-   vue-app.menu-open .site-menu {
-      position: fixed;
-      background-color: white;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      display: grid;
-      place-items: center;
-   }
-
+<style scoped>
    .site-menu {
-      border: 4px solid red;
+      background-color: var(--color-light);
    }
 
-   vue-app.menu-open .site-menu ul {
+   .site-menu ul {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      list-style: none; /* $todo */
+      margin: 0;
+      padding: 0;
    }
 
-   vue-app.menu-open .site-menu a {
-      display: block;
+   .site-menu a:not(.home-link) {
       padding: 20px;
    }
 
-   body,
-   #app {
-      display: contents;
-   }
-
-   vue-app {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-
-      position: relative;
-      overflow: hidden;
-   }
-
-   main {
-      flex-grow: 1;
-   }
-
-   inner-column {
+   .site-menu .home-link {
       display: block;
-      max-width: 1000px;
-      margin-right: auto;
-      margin-left: auto;
-      border: 1px solid blue;
       padding: 10px;
    }
 
-   route-outlet {
-      display: block;
-      border: 2px dashed gray;
-      padding: 10px;
+   .site-menu .home-link svg {
+      max-width: 20px;
+   }
+
+   .site-menu .router-link-active {
+      color: var(--color);
+   }
+
+   .site-menu .router-link-active * {
+      fill: var(--color);
+   }
+
+   @media (max-width: 599px) {
+      .site-menu {
+         position: fixed;
+         background-color: var(--color-light);
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+
+         display: grid;
+         place-items: center;
+
+         transition: all 0.2s ease-in-out;
+         opacity: 0.2;
+         transform: translate(90%, 0);
+         pointer-events: none;
+      }
+
+      .site-menu ul {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .site-menu a {
+         display: block;
+         padding: 20px;
+      }
+
+      vue-app.menu-open .site-menu {
+         opacity: 1;
+         transform: translate(0, 0);
+         pointer-events: initial;
+      }
+   }
+
+   @media (min-width: 600px) {
+      button {
+         display: none;
+      }
    }
 </style>

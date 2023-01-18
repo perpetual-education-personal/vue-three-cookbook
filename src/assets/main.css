@@ -1,5 +1,6 @@
 #app {
 	--color: red;
+	--color-light: #ffc7c7;
 
 	font-family: sans-serif;
 }
@@ -8,38 +9,42 @@
 	box-sizing: border-box;
 }
 
+/* STRUCTURE */
+body,
+#app {
+	display: contents;
+}
+
+vue-app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	position: relative;
+	overflow: hidden;
+}
+
+main {
+	flex-grow: 1;
+}
+
+inner-column {
+	display: block;
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid blue;
+	padding: 10px;
+}
+
+route-outlet {
+	display: block;
+	border: 2px dashed gray;
+	padding: 10px;
+}
+
 * > svg {
 	display: block;
 	width: 100%;
 	height: 100%;
-}
-
-.router-link-active {
-	color: var(--color);
-}
-
-.router-link-active * {
-	fill: var(--color);
-}
-
-.site-menu ul {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	list-style: none; /* $todo */
-	margin: 0;
-	padding: 0;
-}
-
-.site-menu a:not(.home-link) {
-	padding: 20px;
-}
-
-.site-menu .home-link {
-	display: block;
-	padding: 10px;
-}
-
-.site-menu .home-link svg {
-	max-width: 20px;
 }

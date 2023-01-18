@@ -11,6 +11,28 @@ The main branch should stay clean and as minimal as possible (or as needed to su
 
 Everything will be in Vue 3 and use the composition api and setup pattern.
 
+## Examples
+
+### Structure
+
+-  HTML structure experiments: [repo]() | [stage](https://vue-three-cookbook-html-structure-experiments.surge.sh/)
+
+### User interface
+
+-  Toggle body class: [repo](https://github.com/perpetual-education/vue-three-cookbook/tree/toggle-body-class) | [stage](https://vue-three-cookbook-toggle-body-class.surge.sh/)
+
+### Routing
+
+-  Basic product list: [repo](https://github.com/perpetual-education/vue-three-cookbook/tree/basic-product-list) | [stage](https://vue-three-cookbook-basic-product-list.surge.sh/)
+
+---
+
+---
+
+---
+
+---
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).

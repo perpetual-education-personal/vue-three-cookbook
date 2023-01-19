@@ -1,43 +1,23 @@
 <script setup>
-   import { ref, reactive } from 'vue';
+   import { ref, reactive, computed } from 'vue';
    import { RouterLink, RouterView } from 'vue-router';
    import HelloWorld from './components/HelloWorld.vue';
    import ProjectLogo from './components/graphics/ProjectLogo.vue';
+   import { useNamesStore } from '@/stores/names.js';
 
-   const exampleData = [
-      {
-         id: 'a',
-         name: 'Andy',
-      },
-      {
-         id: 'b',
-         name: 'Burooj',
-      },
-      {
-         id: 'j',
-         name: 'Jesse',
-      },
-      {
-         id: 'n',
-         name: 'Ned',
-      },
-   ];
-
-   // ref version
-   const liveDataRef = ref(exampleData);
-
-   function removeItem(id) {
-      liveDataRef.value = liveDataRef.value.filter((item) => item.id !== id);
-   }
-
-   // reactive object version
-   const liveData = reactive({
-      list: exampleData,
-   });
+   const names = useNamesStore();
 
    function removeOtherItem(id) {
-      liveData.list = liveData.list.filter((item) => item.id !== id);
+      names.list = names.list.filter((item) => item.id !== id);
    }
+
+   const searchString = ref('');
+
+   const filtered = computed(function () {
+      return names.list.filter(function (item) {
+         return item.name.toLowerCase().includes(searchString.value.toLowerCase());
+      });
+   });
 </script>
 
 <template>
@@ -68,17 +48,22 @@
    </header>
 
    <main>
-      <ul>
-         <li>Ref</li>
-         <li v-for="item in liveDataRef" :key="item.name">
+      <label for="">Search</label>
+
+      <input type="text" v-model="searchString" />
+
+      <h2>Results for {{ searchString }}</h2>
+
+      <ul style="border: 1px solid red">
+         <li><u>Filtered results</u></li>
+         <li v-for="item in filtered" :key="item.name">
             {{ item.name }}
-            <button @click="removeItem(item.id)">x</button>
          </li>
       </ul>
 
       <ul>
-         <li>Reactive object</li>
-         <li v-for="item in liveData.list" :key="item.id">
+         <li><u>Reactive object</u></li>
+         <li v-for="item in names.list" :key="item.id">
             {{ item.name }}
             <button @click="removeOtherItem(item.id)">x</button>
          </li>

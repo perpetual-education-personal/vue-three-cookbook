@@ -1,13 +1,27 @@
 <script setup>
    import { ref } from 'vue';
-   import { RouterLink, RouterView } from 'vue-router';
+   import { RouterLink, RouterView, useRouter } from 'vue-router';
    import HelloWorld from './components/HelloWorld.vue';
    import ProjectLogo from './components/graphics/ProjectLogo.vue';
 
    const mainMenuOpen = ref(false);
 
+   const router = useRouter();
+
+   router.afterEach(function (to, from) {
+      console.log(to, from);
+
+      if (to.path !== from.path) {
+         closeMenu();
+      }
+   });
+
    function toggleMenu() {
       mainMenuOpen.value = !mainMenuOpen.value;
+   }
+
+   function closeMenu() {
+      mainMenuOpen.value = false;
    }
 </script>
 

@@ -24,7 +24,7 @@
                </li>
 
                <li>
-                  <RouterLink to="/restaraunts">Restaraunts</RouterLink>
+                  <RouterLink to="/restaurants">Restaurants</RouterLink>
                </li>
             </ul>
          </nav>

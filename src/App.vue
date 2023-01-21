@@ -2,6 +2,9 @@
    import { RouterLink, RouterView } from 'vue-router';
    import HelloWorld from './components/HelloWorld.vue';
    import ProjectLogo from './components/graphics/ProjectLogo.vue';
+   import { useCartStore } from '@/stores/cart';
+
+   const cart = useCartStore();
 </script>
 
 <template>
@@ -25,6 +28,12 @@
 
                <li>
                   <RouterLink to="/products">Products</RouterLink>
+               </li>
+
+               <li>
+                  <RouterLink to="/cart">
+                     {{ cart.count }}
+                  </RouterLink>
                </li>
             </ul>
          </nav>

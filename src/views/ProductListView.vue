@@ -1,7 +1,10 @@
 <script setup>
 	import { RouterLink, RouterView } from 'vue-router';
+	import { useCartStore } from '@/stores/cart';
 
 	const props = defineProps(['products']);
+
+	const cart = useCartStore();
 </script>
 
 <template>
@@ -10,9 +13,7 @@
 
 	<ul>
 		<li v-for="product in products.list">
-			<RouterLink :to="`products/${product.slug}`">
-				{{ product.name }}
-			</RouterLink>
+			<button @click="cart.add(product.id)">{{ product.name }}</button>
 		</li>
 	</ul>
 </template>

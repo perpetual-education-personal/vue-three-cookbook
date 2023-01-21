@@ -11,7 +11,7 @@
    router.afterEach(function (to, from) {
       console.log(to, from);
 
-      if (to.path !== from.path) {
+      if (to !== from) {
          closeMenu();
       }
    });

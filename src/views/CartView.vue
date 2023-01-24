@@ -11,5 +11,7 @@
 		</li>
 	</ul>
 
+	<button v-if="cart.count" @click="cart.clear()">Clear cart</button>
+
 	<p v-if="cart.count == 0">There is nothing in your cart yet.</p>
 </template>

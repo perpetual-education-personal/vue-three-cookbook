@@ -12,9 +12,14 @@ export const useCartStore = defineStore('cart', function () {
 		items.value.push(id);
 	}
 
+	function clear() {
+		items.value = [];
+	}
+
 	return {
 		items,
 		count,
 		add,
+		clear,
 	};
 });

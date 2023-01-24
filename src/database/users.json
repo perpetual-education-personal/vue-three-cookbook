@@ -1,0 +1,11 @@
+{
+	"01": {
+		"username": "admin",
+		"password": "opensesame",
+		"role": "admin"
+	},
+	"02": {
+		"username": "user",
+		"password": "pass"
+	}
+}

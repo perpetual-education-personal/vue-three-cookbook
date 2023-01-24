@@ -2,11 +2,16 @@
    import { RouterLink, RouterView } from 'vue-router';
    import HelloWorld from './components/HelloWorld.vue';
    import ProjectLogo from './components/graphics/ProjectLogo.vue';
+
+   import { useAppStore } from '@/stores/app';
+
+   const app = useAppStore();
 </script>
 
 <template>
    <header>
       <div class="wrapper">
+         {{ app.user }} : {{ app.loggedIn }}
          <nav class="site-menu">
             <ul>
                <li>
@@ -24,7 +29,7 @@
                </li>
 
                <li>
-                  <RouterLink to="/about">About</RouterLink>
+                  <RouterLink to="/login">Login</RouterLink>
                </li>
             </ul>
          </nav>

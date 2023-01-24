@@ -10,10 +10,12 @@ export const useCartStore = defineStore('cart', function () {
 
 	function add(id) {
 		items.value.push(id);
+		localStorage.setItem('myData', JSON.stringify(items.value));
 	}
 
 	function clear() {
 		items.value = [];
+		localStorage.setItem('myData', []);
 	}
 
 	return {

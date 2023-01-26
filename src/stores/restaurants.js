@@ -22,19 +22,12 @@ export const useRestaurantsStore = defineStore('restaurants', () => {
 		});
 	}
 
-	function getData() {
+	async function getData() {
 		const endpoint = 'https://raw.githubusercontent.com/perpetual-education/restaurants-data/main/data.json';
-		const request = fetch(endpoint);
-
-		request
-			.then(function (data) {
-				return data.json();
-			})
-			.then(function (json) {
-				console.log('json fetched: ', json);
-				list.value = json;
-			});
-	}
+		const responsce = await fetch(endpoint);
+		const json = await responsce.json();
+		list.value = json;
+	} // doesn't account for errors for brevity - 
 
 	onMounted(getData);
 

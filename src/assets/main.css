@@ -43,3 +43,16 @@
 .site-menu .home-link svg {
 	max-width: 20px;
 }
+
+.card {
+	display: block;
+	padding: 10px;
+	border-radius: 6px;
+	border: 1px solid gray;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

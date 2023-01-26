@@ -15,6 +15,14 @@ export default defineConfig({
 			enforce: 'pre',
 			apply: 'build',
 		},
+		{
+			template: {
+				compilerOptions: {
+					// treat all tags with a dash as custom elements
+					isCustomElement: (tag) => tag.includes('-'),
+				},
+			},
+		},
 	],
 	resolve: {
 		alias: {

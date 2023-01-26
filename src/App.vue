@@ -1,6 +1,5 @@
 <script setup>
-	import { onMounted } from 'vue';
-	import { watch } from 'vue';
+	import { watch, onMounted } from 'vue';
 	import { RouterLink, RouterView } from 'vue-router';
 	import HelloWorld from './components/HelloWorld.vue';
 	import ProjectLogo from './components/graphics/ProjectLogo.vue';
@@ -11,15 +10,12 @@
 	onMounted(function () {
 		if (localStorage.getItem('myData')) {
 			cart.items = JSON.parse(localStorage.getItem('myData'));
-		} else {
-			// nothin
 		}
 	});
 
-	watch(cart, function (newState, oldState) {
-		if (newState !== oldState) {
-			localStorage.setItem('myData', JSON.stringify(newState.items));
-		}
+	watch(cart.items, function (newList, oldList) {
+		// localStorage.setItem('myData', JSON.stringify(cart.items));
+		// not sure why this doesn't work... 
 	});
 </script>
 

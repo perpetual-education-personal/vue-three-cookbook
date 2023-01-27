@@ -68,3 +68,21 @@ ul {
 	border: 1px solid gray;
 	border-radius: 6px;
 }
+
+.card.favorite .icon {
+	color: red;
+}
+
+.restaurant-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	fill: currentColor;
+}

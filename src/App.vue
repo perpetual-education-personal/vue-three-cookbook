@@ -1,12 +1,15 @@
 <script setup>
 	import { RouterLink, RouterView, useRoute } from 'vue-router';
 	import HelloWorld from './components/HelloWorld.vue';
+	import IconSprite from '@/partials/IconSprite.vue';
 	import ProjectLogo from './components/graphics/ProjectLogo.vue';
 
 	const route = useRoute();
 </script>
 
 <template>
+	<IconSprite />
+
 	<header>
 		<div class="wrapper">
 			<pre>

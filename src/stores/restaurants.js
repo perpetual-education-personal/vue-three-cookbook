@@ -27,7 +27,7 @@ export const useRestaurantsStore = defineStore('restaurants', () => {
 		const responsce = await fetch(endpoint);
 		const json = await responsce.json();
 		list.value = json;
-	} // doesn't account for errors for brevity - 
+	} // doesn't account for errors for brevity -
 
 	onMounted(getData);
 

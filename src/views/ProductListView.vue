@@ -13,7 +13,7 @@
 
 	<ul>
 		<li v-for="product in products.list">
-			<button @click="cart.add(product.id)">{{ product.name }}</button>
+			<button @click="cart.add(product)">{{ product.name }}</button>
 		</li>
 	</ul>
 </template>

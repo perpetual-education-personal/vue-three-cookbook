@@ -18,8 +18,22 @@
 	fill: var(--color);
 }
 
-#app,
+#app {
+	border: 3px dashed black;
+	padding: 10px;
+}
+
 div.outlet {
 	border: 3px dashed red;
+	padding: 10px;
+}
+
+div.outlet div.outlet {
+	border: 3px dashed blue;
+	padding: 10px;
+}
+
+div.outlet div.outlet div.outlet {
+	border: 3px dashed orange;
 	padding: 10px;
 }

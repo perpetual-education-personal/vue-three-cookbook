@@ -1,16 +1,16 @@
 [
 	{
-		"id": "a123",
+		"id": "a",
 		"name": "Product 1",
 		"slug": "product-1"
 	},
 	{
-		"id": "a1234",
+		"id": "b",
 		"name": "Product 2",
 		"slug": "product-2"
 	},
 	{
-		"id": "a1235",
+		"id": "c",
 		"name": "Product 3",
 		"slug": "product-3"
 	}

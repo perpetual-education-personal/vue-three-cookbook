@@ -6,9 +6,7 @@
 
 <template>
 	<ul v-if="cart.count > 0">
-		<li v-for="item in cart.items">
-			{{ item }}
-		</li>
+		<li v-for="id in cart.items">item id: {{ id }}</li>
 	</ul>
 
 	<button v-if="cart.count" @click="cart.clear()">Clear cart</button>

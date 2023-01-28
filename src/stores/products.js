@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
-import productsData from '../static-data/products.json' assert { type: 'json' };
+import productsData from '../static-data/products.json';
 
 export const useProductsStore = defineStore('products', () => {
 	const list = ref(productsData);

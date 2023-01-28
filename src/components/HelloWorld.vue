@@ -8,5 +8,5 @@
 </script>
 
 <template>
-	<h1>{{ helloMessage }} ssss</h1>
+	<h1>{{ helloMessage }}</h1>
 </template>

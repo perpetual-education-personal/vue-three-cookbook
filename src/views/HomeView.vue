@@ -1,6 +1,6 @@
 <script setup>
-	import { ref } from 'vue';
-	//import AboutView from '@/views/AboutView.vue';
+	// import { ref } from 'vue';
+	// import AboutView from '@/views/AboutView.vue';
 	const x = ref('hi');
 </script>
 
@@ -9,5 +9,6 @@
 
 	{{ x }}
 
+	<AboutView />
 	<HelloWorld />
 </template>

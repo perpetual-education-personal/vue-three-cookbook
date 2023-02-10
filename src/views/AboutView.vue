@@ -2,7 +2,7 @@
 	import { ref, onMounted } from 'vue';
 	import gsap from 'gsap';
 
-	const box = ref(null); // connects to template -- but can't figure out how to use it in the timeline yet...
+	const box = ref(null); // but showing the regular .box element here -
 
 	const timeline = gsap.timeline({
 		paused: true,
@@ -62,6 +62,7 @@
 		}
 		// maybe this wasn't nessesary... after comparing...
 		// seems to already be the standard?
+		// but you see the point...
 	};
 	const restart = () => timeline.restart();
 </script>

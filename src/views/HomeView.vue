@@ -8,26 +8,26 @@
 		paused: true,
 	});
 
-	function setupTimeline(ref) {
+	function setupTimeline(target) {
 		timeline.timeScale(0.5);
 
 		timeline
-			.to('.box', {
+			.to(target, {
 				x: 200,
 				backgroundColor: '#9fc9eb',
 			})
-			.to('.box', {
+			.to(target, {
 				y: 200,
 				backgroundColor: '#fdcc9a',
 				borderRadius: '50%',
 				rotate: '180deg',
 			})
-			.to('.box', {
+			.to(target, {
 				x: 0,
 				backgroundColor: '#fbf49c',
 				rotate: '360deg',
 			})
-			.to('.box', {
+			.to(target, {
 				y: 0,
 				backgroundColor: '#f69799',
 				borderRadius: '0%',
@@ -37,7 +37,7 @@
 
 	// after DOM is rendered
 	onMounted(function () {
-		setupTimeline();
+		setupTimeline(box.value);
 	});
 
 	function play() {

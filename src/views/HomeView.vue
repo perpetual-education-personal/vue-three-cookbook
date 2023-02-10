@@ -63,6 +63,8 @@
 		<button @click="reverse()">Reverse</button>
 		<button @click="restart()">Restart</button>
 	</actions-zone>
+
+	<p>This one <em>works</em>, but see if you can find some edge cases.</p>
 </template>
 
 <style>

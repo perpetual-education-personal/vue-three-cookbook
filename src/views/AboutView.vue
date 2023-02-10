@@ -60,6 +60,8 @@
 		} else {
 			timeline.reverse();
 		}
+		// maybe this wasn't nessesary... after comparing...
+		// seems to already be the standard?
 	};
 	const restart = () => timeline.restart();
 </script>

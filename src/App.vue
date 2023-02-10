@@ -20,11 +20,11 @@
                </li>
 
                <li>
-                  <RouterLink to="/">Home</RouterLink>
+                  <RouterLink to="/">Timeline</RouterLink>
                </li>
 
                <li>
-                  <RouterLink to="/about">About</RouterLink>
+                  <RouterLink to="/about">More timeline</RouterLink>
                </li>
             </ul>
          </nav>
